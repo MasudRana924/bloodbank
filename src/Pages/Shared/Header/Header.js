@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
-
+import { HashLink } from 'react-router-hash-link';
 const Header = () => {
     const search=<FontAwesomeIcon icon={faSearch} />
     return (
@@ -15,10 +15,10 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto ms-5 ps-5">
-                            <Nav.Link href="#features" className="nav-name text-white">Home</Nav.Link>
+                            <Nav.Link as={HashLink} to="/home" className="nav-name text-white">Home</Nav.Link>
                             <Nav.Link href="#pricing" className="nav-name text-white">About</Nav.Link>
-                            <Nav.Link href="#pricing" className="nav-name text-white">Contact </Nav.Link>
-                            <Nav.Link href="#pricing" className="nav-name text-white">Donate</Nav.Link>
+                            <Nav.Link as={HashLink} to="/contact"className="nav-name text-white">Contact </Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#donate" className="nav-name text-white">Donate</Nav.Link>
 
                         </Nav>
                         <Nav className=" mx-auto">
@@ -28,9 +28,9 @@ const Header = () => {
                             </span>
                         </Nav>
                         <Nav>
-                            <Link className="login-panel ms-3"> <button className="login-btn">
+                            <Link to="/login" className="login-panel ms-3"> <button className="login-btn">
                                 Login</button> </Link>
-                            <Link className="login-panel ms-3"> <button className="login-btn">
+                            <Link to="/signup" className="login-panel ms-3"> <button className="login-btn">
                                 SignUp</button> </Link>
                         </Nav>
                     </Navbar.Collapse>

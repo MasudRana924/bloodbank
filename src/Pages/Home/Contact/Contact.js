@@ -9,11 +9,11 @@ const Contact = () => {
     const phone = <FontAwesomeIcon icon={faPhone} className="phone-icon" />
     const email = <FontAwesomeIcon icon={faEnvelope} className="phone-icon" />
     return (
-        <div>
+        <div id="contact">
             <Container fluid className="mt-5 pt-5">
                 <Row xs={1} md={3} className="mt-3">
-                    <Col md={2} className=""></Col>
-                    <Col md={8} className="">
+                    <Col md={3} className=""></Col>
+                    <Col md={6} className="">
                         <div className="donate-form w-75 mx-auto ">
                             <div className="w-100 contact-header">
                                 <p className="text-white text-center pt-3 fs-2">Contact Us</p>
@@ -47,7 +47,7 @@ const Contact = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={2} className="mt-5 pt-5"></Col>
+                    <Col md={3} className="mt-5 pt-5"></Col>
                 </Row>
             </Container>
             <ToastContainer position="top-center"

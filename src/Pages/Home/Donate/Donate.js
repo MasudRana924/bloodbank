@@ -6,11 +6,11 @@ import './Donate.css'
 
 const Donate = () => {
     return (
-        <div id="contact">
+        <div id="donate">
             <Container fluid className="mt-5 pt-5">
                 <Row xs={1} md={3} className="mt-3">
-                    <Col md={2} className=""></Col>
-                    <Col md={8} className="">
+                    <Col md={3} className=""></Col>
+                    <Col md={6} className="">
                         <div className="donate-form w-75 mx-auto ">
                             <div className=" w-75 mx-auto pb-5">
                                 <p className="text-white text-center pt-3 fs-2"> Ready to Donate</p>
@@ -47,7 +47,7 @@ const Donate = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={2} className="mt-5 pt-5"></Col>
+                    <Col md={3} className="mt-5 pt-5"></Col>
                 </Row>
             </Container>
             <ToastContainer position="top-center"
