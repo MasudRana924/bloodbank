@@ -1,11 +1,14 @@
 import React from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 import Donar from '../Donar/Donar';
 import './Donars.css'
 
 const Donars = () => {
     const { donars, displayDonars, setDisplayDonars } = useAuth()
+    const check=<FontAwesomeIcon icon={faCheckCircle} className="mark-icon"/>
     const handleDhaka= e => {
         const city = e.target.value
         const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
@@ -96,8 +99,10 @@ const Donars = () => {
                         </div>
                         <div className="d-flex w-75 mx-auto">
                             <div>
+                                
                                 <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="dhaka" label="Dhaka" onChange={handleDhaka}/>
+                                  
+                                    <Form.Check type="checkbox" value="dhaka" label="Dhaka" onChange={handleDhaka} />
                                 </Form.Group>
                                 <Form.Group className="mb-3 " >
                                     <Form.Check type="checkbox" value="Mymensingh" label="Mymensingh" onChange={handleMym}/>

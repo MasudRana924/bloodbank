@@ -5,7 +5,7 @@ const useDonars = () => {
     const [donars, setDonars] = useState([]);
     const [displayDonars, setDisplayDonars] = useState([]);
     useEffect(() => {
-        fetch('./donars.json')
+        fetch('http://localhost:5000/donars')
             .then(res => res.json())
             .then(data =>{
 
