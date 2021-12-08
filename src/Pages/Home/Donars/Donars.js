@@ -1,182 +1,99 @@
 import React from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Col, Container, Button, Row } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle} from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBurn,faFirstAid } from '@fortawesome/free-solid-svg-icons'
 import Donar from '../Donar/Donar';
 import './Donars.css'
 
 const Donars = () => {
     const { donars, displayDonars, setDisplayDonars } = useAuth()
-    const check=<FontAwesomeIcon icon={faCheckCircle} className="mark-icon"/>
-    const handleDhaka= e => {
+    const search = <FontAwesomeIcon icon={faSearch} className="burn-icon" />
+    const burn = <FontAwesomeIcon icon={faBurn} className="burn-icon" />
+    const faid = <FontAwesomeIcon icon={faFirstAid} className="burn-icon" />
+    const handleSearch = e => {
         const city = e.target.value
         const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
         setDisplayDonars(matchedCity)
     }
-    const handleMym= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
+    const handleBloodSearch = e => {
+        const blood = e.target.value
+        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(blood.toLowerCase()));
         setDisplayDonars(matchedCity)
     }
-    const handleCTG= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleBS= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleRS= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleRP= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleKL= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleSLY= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleApositive= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleAnegative= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleBpositive= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleBnegative= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleABpositive= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleABnegative= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleOpositive= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
-    const handleOnegative= e => {
-        const city = e.target.value
-        const matchedCity = donars.filter(h => h.group.toLowerCase().includes(city.toLowerCase()));
-        setDisplayDonars(matchedCity)
-    }
+
     return (
-        <Container fluid className="pb-5">
-            <Row md={2}>
-                <Col md={3} className="mt-3">
-                    <div className="district-section">
-                        <div className="district-container">
-                            <h3 className="text-center" sticky="top">District</h3>
-                        </div>
-                        <div className="d-flex w-75 mx-auto">
-                            <div>
-                                
-                                <Form.Group className="mb-3 " >
-                                  
-                                    <Form.Check type="checkbox" value="dhaka" label="Dhaka" onChange={handleDhaka} />
-                                </Form.Group>
-                                <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="Mymensingh" label="Mymensingh" onChange={handleMym}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="Chittagong" label="Chittagong" onChange={handleCTG}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="Barisal" label="Barisal" onChange={handleBS}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="Sylhet" label="Sylhet" onChange={handleSLY} />
-                                </Form.Group>
-                                <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="Rangpur" label="Rangpur" onChange={handleRP}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="Khulna" label="Khulna" onChange={handleKL}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 " >
-                                    <Form.Check type="checkbox" value="Rajshahi" label="Rajshahi" onChange={handleRS}/>
-                                </Form.Group>
+        <Container fluid className="mt-5 pb-5">
+            <div className="w-75 mx-auto">
+                <Row xs={1} md={3}>
+                    <Col md={4}>
+                        <div className="search-div">
+                            <div className="mt-3 search-container w-25 mx-auto">
+                                <p className="">{search}</p>
                             </div>
-                            <div>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="a+" label="A+" className="me-5 "onChange={handleApositive} />
-                                </Form.Group>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="A-" label="A-" className="me-5 " onChange={handleAnegative}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="B+" label="B+" className="me-5 " onChange={handleBpositive} />
-                                </Form.Group>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="B-" label="B-" className="me-5 " onChange={handleBnegative} />
-                                </Form.Group>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="AB+" label="AB+" className="me-5 " onChange={handleABpositive}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="AB-" label="AB-" className="me-5 " onChange={handleABnegative}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="O+" label="O+" className="me-5 " onChange={handleOpositive}/>
-                                </Form.Group>
-                                <Form.Group className="mb-3 w-50 mx-auto" >
-                                    <Form.Check type="checkbox" value="O-" label="O-" className="me-5 " onChange={handleOnegative}/>
-                                </Form.Group>
+                            <div className="mt-3">
+                                <h4 >Find A Location </h4>
+                                <input type="text" className="input-find" onChange={handleSearch} placeholder="search" />
                             </div>
+
                         </div>
+                    </Col>
+                    <Col md={4}>
+                        <div className="search-div">
+                            <div className="mt-3 search-container w-25 mx-auto">
+                                <p className="">{burn}</p>
+                            </div>
+                            <div className="mt-3">
+                                <h4 >Find Blood  </h4>
+                                <input type="text" className="input-find" onChange={handleBloodSearch} placeholder="search (A+)" />
+                                <div className="mt-1">
+                                    <button className="blood-btn" >A+</button>
+                                    <button className="blood-btn">A-</button>
+                                    <button className="blood-btn">B+</button>
+                                    <button className="blood-btn">B-</button>
+                                </div>
+                                <div className="mt-1">
+                                    <button className="blood-btn">AB+</button>
+                                    <button className="blood-btn">AB-</button>
+                                    <button className="blood-btn">O+</button>
+                                    <button className="blood-btn">O-</button>
+                                </div>
+                            </div>
 
+                        </div>
+                    </Col>
+                    <Col md={4}>
+                        <div className="search-div">
+                            <div className="mt-3 search-container w-25 mx-auto">
+                                <p className="">{faid}</p>
+                            </div>
+                            <div className="mt-3">
+                                <h4 >Request</h4>
+                                 <Button size="sm" variant="danger">Emergency</Button>
+                                 <p>---OR---</p>
+                            </div>
 
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+            <div className="mt-5" >
 
-                    </div>
-
-
-                </Col>
-                <Col md={9} className="mt-3">
-                    <div className="donars-section">
+                <div className=" w-75 mx-auto donars-section">
                     <div className="district-container">
-                            <h3 className="text-center" sticky="top">Available Blood Groups</h3>
-                        </div>
-
-
-                        <Row xs={1} md={3}>
-                            {
-                                displayDonars.map(donar => <Donar
-                                    donar={donar}
-                                ></Donar>)
-                            }
-                        </Row>
+                        <h3 className="text-center" sticky="top">Available Blood Groups</h3>
                     </div>
-                </Col>
-            </Row>
+                    <Row xs={1} md={3} className="ps-1 pe-1">
+
+                        {
+                            displayDonars.map(donar => <Donar
+                                donar={donar}
+                            ></Donar>)
+                        }
+                    </Row>
+                </div>
+            </div>
+
         </Container>
     );
 };

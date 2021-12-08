@@ -1,10 +1,4 @@
-.district-section{
-    height:500px;
-    /* overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-color: red green; */
-    border:1px solid gainsboro;
-}
+
 .district-container{
     background-color: #e55353;
     position: sticky;
@@ -32,9 +26,50 @@
     background: #b30000; 
   }
   .donars-section{
-    height:500px;
+    height:600px;
      overflow-y: scroll;
     overflow-x: hidden;
     border:1px solid gainsboro;
    
+}
+.search-div{
+  background-color: white; 
+  height:280px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 15px;
+}
+.search-container{
+  height:80px;
+  background-color: rgb(255, 220, 236);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+ 
+ 
+}
+.search-icon{
+  font-size: 30px;
+  margin-top: 25px;
+  margin-left: -5px;
+  color:rgba(255, 0, 255, 0.295);
+}
+.burn-icon{
+  font-size: 30px;
+  margin-top: 25px;
+  margin-left: -5px;
+  color:rgb(255, 0, 0);
+}
+.input-find{
+  outline-style: none;
+  border:none;
+  border-bottom: 1px solid #e55353 ;
+}
+.blood-btn{
+  background-color: #e55353;
+  margin-left: 5px;
+  border:#e55353;
+  border-radius: 5px;
+  color:white;
+  width:45px;
 }

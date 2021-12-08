@@ -5,8 +5,10 @@ import { faUserInjured, faUser } from '@fortawesome/free-solid-svg-icons'
 import './Clients.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useAuth from '../../../Hooks/useAuth';
 AOS.init();
 const Clients = () => {
+    const { donars } = useAuth()
     const patient = <FontAwesomeIcon icon={faUserInjured} className="user-icon" />
     const donar = <FontAwesomeIcon icon={faUser} className="user-icon" />
     AOS.init({
@@ -31,7 +33,7 @@ const Clients = () => {
                     <div className="user-card" data-aos="fade-down" >
                         <span>{donar}</span>
 
-                        <h4 className="mt-3"><b>10k</b></h4>
+                        <h4 className="mt-3"><b>{donars.length}</b></h4>
                         <p>Great Donars</p>
 
                     </div>
@@ -40,8 +42,8 @@ const Clients = () => {
                     <div className="user-card" data-aos="fade-down" >
                         <span>{donar}</span>
 
-                        <h4 className="mt-3"><b>10</b></h4>
-                        <p>Group Members</p>
+                        <h4 className="mt-3"><b>20</b></h4>
+                        <p>Request Pending</p>
 
                     </div>
                 </Col>
