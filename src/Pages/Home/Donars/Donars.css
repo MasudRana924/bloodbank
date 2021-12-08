@@ -31,3 +31,10 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
   }
+  .donars-section{
+    height:500px;
+     overflow-y: scroll;
+    overflow-x: hidden;
+    border:1px solid gainsboro;
+   
+}

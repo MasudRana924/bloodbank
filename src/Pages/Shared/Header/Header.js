@@ -5,8 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
 import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../../Hooks/useAuth';
 const Header = () => {
     const search=<FontAwesomeIcon icon={faSearch} />
+    const { donars,  setDisplayDonars } = useAuth()
+   
+    const handleSearch= e => {
+        const city = e.target.value
+        const matchedCity = donars.filter(h => h.division.toLowerCase().includes(city.toLowerCase()));
+        setDisplayDonars(matchedCity)
+    }
     return (
         <Container fluid >
             <Navbar collapseOnSelect expand="lg" className="navbar">
@@ -24,7 +32,7 @@ const Header = () => {
                         <Nav className=" mx-auto">
                             <span>
                             <span className="search">{search}</span>
-                                <input type="text" placeholder="fine here" className="input-panel ps-5" /> 
+                                <input type="text" placeholder="fine location here" className="input-panel ps-5" onChange={handleSearch}/> 
                             </span>
                         </Nav>
                         <Nav>

@@ -16,8 +16,8 @@ const Clients = () => {
       })
     return (
         <Container fluid className="mt-5 pt-5 pb-5">
-            <Row className="w-50 mx-auto" xs={1} md={2}>
-                <Col md={6}>
+            <Row className="" xs={1} md={3}>
+                <Col md={4}>
                     <div className="user-card" data-aos="fade-down" data-aos-offset="420"  data-aos-duration="400">
                        
                         <span>{patient}</span>
@@ -27,12 +27,21 @@ const Clients = () => {
 
                     </div>
                 </Col>
-                <Col md={6}>
+                <Col md={4}>
                     <div className="user-card" data-aos="fade-down" >
                         <span>{donar}</span>
 
                         <h4 className="mt-3"><b>10k</b></h4>
                         <p>Great Donars</p>
+
+                    </div>
+                </Col>
+                <Col md={4}>
+                    <div className="user-card" data-aos="fade-down" >
+                        <span>{donar}</span>
+
+                        <h4 className="mt-3"><b>10</b></h4>
+                        <p>Group Members</p>
 
                     </div>
                 </Col>
