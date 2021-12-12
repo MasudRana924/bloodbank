@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBurn,faFirstAid } from '@fortawesome/free-solid-svg-icons'
 import Donar from '../Donar/Donar';
 import './Donars.css'
+import { Link } from 'react-router-dom';
 
 const Donars = () => {
     const { donars, displayDonars, setDisplayDonars } = useAuth()
@@ -69,7 +70,9 @@ const Donars = () => {
                             </div>
                             <div className="mt-3">
                                 <h4 >Request</h4>
+                                <Link to="/booking">
                                  <Button size="sm" variant="danger">Emergency</Button>
+                                 </Link>
                                  <p>---OR---</p>
                             </div>
 

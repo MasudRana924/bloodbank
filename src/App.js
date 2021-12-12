@@ -1,9 +1,8 @@
 import './App.css';
 import {
-  BrowserRouter,
-  Switch,
-  Route,
-
+  BrowserRouter as Router,
+  Routes,
+  Route
 } from "react-router-dom";
 import Header from './Pages/Shared/Header/Header';
 import Home from './Pages/Home/Home';
@@ -12,31 +11,29 @@ import Signup from './Pages/Signup/Signup';
 import Contact from './Pages/Home/Contact/Contact';
 import Footer from './Pages/Shared/Footer/Footer';
 import AuthProvider from './Context/AuthProvider';
+import Booking from './Pages/Booking/Booking';
 function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <BrowserRouter>
+        <Router>
           <Header></Header>
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
+          <Routes>
+            <Route path="/home" element={<Home />}>
             </Route>
-            <Route path="/home">
-              <Home></Home>
+            <Route path="/login" element={<Login />}>
             </Route>
-            <Route path="/login">
-              <Login></Login>
+            <Route path="/signup" element={<Signup />}>
             </Route>
-            <Route path="/signup">
-              <Signup></Signup>
+            <Route exact path="/" element={<Home />}>
             </Route>
-            <Route path="/contact">
-              <Contact></Contact>
+            <Route path="/contact" element={<Contact />}>
             </Route>
-          </Switch>
+            <Route path="/booking" element={<Booking />}>
+            </Route>
+          </Routes>
           <Footer></Footer>
-        </BrowserRouter>
+        </Router>
       </AuthProvider>
     </div>
   );
